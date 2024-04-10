@@ -56,7 +56,7 @@ Socket programming finds applications in various domains, including web developm
 ## PROGRAM:
 
 ## CLIENT.PY:
-
+```
 import socket
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -71,9 +71,9 @@ while True:
     continue
 else:
     c.close()
-
+```
 ## SERVER.PY:
-
+```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
@@ -81,7 +81,7 @@ while True:
  print(s.recv(1024).decode())
  s.send("Acknowledgement Recived".encode())
 
-
+```
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
