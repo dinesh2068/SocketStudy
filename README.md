@@ -58,39 +58,40 @@ Socket programming finds applications in various domains, including web developm
 ## CLIENT.PY:
 ```
 import socket
+from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-while True:
- i=input("Enter a data: ")
- c.send(i.encode())
- ack=c.recv(1024).decode()
- if ack:
-    print(ack)
-    continue
-else:
-    c.close()
+print("Client Address : ",addr)
+now = datetime.now()
+c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
+ack=c.recv(1024).decode()
+if ack:
+ print(ack)
+c.close()
+
 ```
 ## SERVER.PY:
 ```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
-while True:
- print(s.recv(1024).decode())
- s.send("Acknowledgement Recived".encode())
+print(s.getsockname())
+print(s.recv(1024).decode())
+s.send("acknowledgement recived from the server".encode())
 
 ```
 ## OUPUT:
 
 ## CLIENT.PY:
 
-![Screenshot 2024-04-10 153503](https://github.com/dinesh2068/SocketStudy/assets/151390189/1803a2a6-797a-4a4c-9e11-37ae1c8cac1d)
+![Screenshot 2024-04-10 161459](https://github.com/dinesh2068/SocketStudy/assets/151390189/f8ecf98e-24e6-4a67-a873-c7b646a894e5)
 
 ## SERVER.PY:
 
-![Screenshot 2024-04-10 153526](https://github.com/dinesh2068/SocketStudy/assets/151390189/2920d982-5476-4d68-a73b-93dd562e586f)
+![Screenshot 2024-04-10 161506](https://github.com/dinesh2068/SocketStudy/assets/151390189/61856570-7e14-404c-a061-0dec069a8b59)
+
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
