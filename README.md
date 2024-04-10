@@ -82,6 +82,15 @@ while True:
  s.send("Acknowledgement Recived".encode())
 
 ```
+## OUPUT:
+
+## CLIENT.PY:
+
+![Screenshot 2024-04-10 153503](https://github.com/dinesh2068/SocketStudy/assets/151390189/1803a2a6-797a-4a4c-9e11-37ae1c8cac1d)
+
+## SERVER.PY:
+
+![Screenshot 2024-04-10 153526](https://github.com/dinesh2068/SocketStudy/assets/151390189/2920d982-5476-4d68-a73b-93dd562e586f)
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
